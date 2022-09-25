@@ -8,6 +8,7 @@
 ## Решение на С#  
 
     string[] arr = {"hello", "2", "world", ":-)"};
+
     void PrintArray(string[] array)
     {
         Console.Write("[ ");
@@ -19,17 +20,26 @@
         Console.Write("]");
     }
 
+    int LenArray(string[] array)
+    {
+        int lenght = 0;
+        for (int i = 0; i < array.Length; i++)
+        {
+            if(array[i].Length < 4) lenght++;
+        }
+        return lenght;
+    }
 
-    var rez = new string[arr.Length];
+    string[] rezArray = new string[LenArray(arr)];
     var rezSize = 0;
     foreach (var i in arr)
     {
         if (i.Length <= 3)
         {
-            rez[rezSize] = i;
+            rezArray[rezSize] = i;
             rezSize++;
         }
     }
 
     PrintArray(arr);
-    PrintArray(rez);
+    PrintArray(rezArray);
