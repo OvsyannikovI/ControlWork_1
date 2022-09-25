@@ -6,9 +6,9 @@
 * ["Russia", "Denmar", "Kazan"]
 
 ## Решение на С#  
-
+    #исходный массив
     string[] arr = {"hello", "2", "world", ":-)"};
-
+    #метод вывода массива на экран
     void PrintArray(string[] array)
     {
         Console.Write("[ ");
@@ -19,7 +19,7 @@
         }
         Console.Write("]");
     }
-
+    #метод возвращающий сколь ко в исходном массиве элементов <= 3
     int LenArray(string[] array)
     {
         int lenght = 0;
@@ -29,9 +29,10 @@
         }
         return lenght;
     }
-
+    #Создаем результирующий массив размерностью сколь ко в исходном массиве элементов <= 3
     string[] rezArray = new string[LenArray(arr)];
     var rezSize = 0;
+    #добавляем в результирующий массив элементы <= 3 из исходного
     foreach (var i in arr)
     {
         if (i.Length <= 3)
@@ -40,6 +41,6 @@
             rezSize++;
         }
     }
-
+    #Выводим оба массива
     PrintArray(arr);
     PrintArray(rezArray);
